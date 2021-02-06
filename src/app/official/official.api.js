@@ -41,3 +41,14 @@ export const exportInformationPDFAPI = (data) => ({
   method: "post",
   data,
 });
+
+export const searchResultsAPI = (param) => ({
+  uri: `/api/zahtev/search/${param}`,
+  method: "get",
+});
+
+export const advancedSearchResultsAPI = (body) => ({
+  uri: `/api/zahtev/advancedSearch`,
+  method: "post",
+  data: body,
+});

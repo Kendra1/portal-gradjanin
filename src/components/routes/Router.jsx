@@ -15,9 +15,10 @@ import { XHTMLPage } from "../pages/XHTMLPage";
 import { PDFPage } from "../pages/PDFPage";
 import { CitizenInformation } from "../pages/CitizenInformation";
 import { Information } from "../pages/Information";
-
-import "../../assets/styles/index.css";
+import { AdvancedSearch } from "../pages/AdvancedSearch";
 import { SingleInformation } from "../pages/SingleInformation";
+import { SearchRequest } from "../pages/SearchRequest";
+import "../../assets/styles/index.css";
 
 export const Router = () => (
   <BrowserRouter>
@@ -33,6 +34,8 @@ export const Router = () => (
       <PrivateRoute path='/myInformation' component={CitizenInformation} />
       <PrivateRoute path='/pdf-export' component={PDFPage} />
       <PrivateRoute path='/xhtml-export' component={XHTMLPage} />
+      <PrivateRoute path='/searchRequests' component={SearchRequest} />
+      <PrivateRoute path='/advancedSearchRequests' component={AdvancedSearch} />
       <PrivateRoute path='/singleInformation' component={SingleInformation} />
       <PrivateRoute path='/' component={RedirectComponent} />
     </Switch>

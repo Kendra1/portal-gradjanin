@@ -6,11 +6,15 @@ import {
   STORE_INFORMATION,
   STORE_CREATION,
   STORE_INFORMATION_PATTERN,
+  STORE_SEARCH_RESULTS,
+  ADVANCED_STORE_SEARCH_RESULTS,
 } from "./official.constants";
 
 const initialState = {
   requests: [],
   information: [],
+  searchResults: [],
+  advancedSearchRequests: [],
   creation: null,
   pattern: null,
   currentXHTML: null,
@@ -26,6 +30,23 @@ const requestsReducer = (state = initialState.requests, action) => {
 
 const informationReducer = (state = initialState.information, action) => {
   if (action.type === STORE_INFORMATION) {
+    return action.payload;
+  }
+  return state;
+};
+
+const searchResultsReducer = (state = initialState.searchResults, action) => {
+  if (action.type === STORE_SEARCH_RESULTS) {
+    return action.payload;
+  }
+  return state;
+};
+
+const advancedSearchResultsReducer = (
+  state = initialState.advancedSearchRequests,
+  action
+) => {
+  if (action.type === ADVANCED_STORE_SEARCH_RESULTS) {
     return action.payload;
   }
   return state;
@@ -62,6 +83,8 @@ const PDFInformationReducer = (state = initialState.currentPDF, action) => {
 export const officialReducer = combineReducers({
   requests: requestsReducer,
   information: informationReducer,
+  searchResults: searchResultsReducer,
+  advancedSearchRequests: advancedSearchResultsReducer,
   creation: creationReducer,
   pattern: patternReducer,
   currentXHTML: XHTMLInformationReducer,

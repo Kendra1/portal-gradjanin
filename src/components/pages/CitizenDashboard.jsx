@@ -14,7 +14,6 @@ export const CitizenDashboard = () => {
   }, [dispatch]);
 
   const requestsState = useSelector(selectRequests);
-  console.log("STATE", requestsState);
   var parser = new DOMParser();
   var xmlDoc = parser.parseFromString(requestsState, "text/xml");
   const requests = useMemo(

@@ -1,12 +1,14 @@
 import { put, call } from "redux-saga/effects";
 import apiRequest from "../api/api.saga";
 import {
+  advancedStoreSearchResults,
   storeCreation,
   storeInformation,
   storeInformationPattern,
   storeInformationPDF,
   storeInformationXHTML,
   storeRequests,
+  storeSearchResults,
 } from "./official.action";
 import {
   acceptRequestAPI,
@@ -14,6 +16,10 @@ import {
   denyRequestAPI,
   getInformationAPI,
   createResponseAPI,
+  exportInformationToXTHMLAPI,
+  exportInformationPDFAPI,
+  advancedSearchResultsAPI,
+  searchResultsAPI,
 } from "./official.api";
 import { transformToString } from "../utils";
 
@@ -66,6 +72,7 @@ export function* acceptRequestSaga(action) {
     obavestenje.documentElement.appendChild(idNode);
 
     const obavestenjeStr = new XMLSerializer().serializeToString(obavestenje);
+
     yield call(apiRequest, acceptRequestAPI(obavestenjeStr));
   } catch (e) {
     console.error(e);
@@ -91,7 +98,10 @@ export function* getInformationPatternSaga() {
 
 export function* exportInformationToXTHMLSaga(action) {
   try {
-    const XHTML = yield call(apiRequest, action.payload);
+    const XHTML = yield call(
+      apiRequest,
+      exportInformationToXTHMLAPI(action.payload)
+    );
     yield put(storeInformationXHTML(XHTML));
   } catch (e) {
     console.error(e);
@@ -100,7 +110,7 @@ export function* exportInformationToXTHMLSaga(action) {
 
 export function* exportInformationPDFSaga(action) {
   try {
-    const PDF = yield call(apiRequest, action.payload);
+    const PDF = yield call(apiRequest, exportInformationPDFAPI(action.payload));
     let binaryString = window.atob(PDF);
 
     let binaryLen = binaryString.length;
@@ -114,6 +124,68 @@ export function* exportInformationPDFSaga(action) {
 
     const file = new Blob([bytes], { type: "application/pdf" });
     yield put(storeInformationPDF(file));
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+export function* searchRequestsSaga(action) {
+  try {
+    const results = yield call(apiRequest, searchResultsAPI(action.payload));
+    yield put(storeSearchResults(results));
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+export function* advancedSearchRequestsSaga(action) {
+  try {
+    const searchParams = action.payload;
+    console.log(action.payload);
+    const searchXML = document.implementation.createDocument(
+      null,
+      `searchZahtevMap`
+    );
+
+    if (searchParams.organVlasti) {
+      const node = document.createElementNS(null, "organVlasti");
+      node.appendChild(document.createTextNode(searchParams.organVlasti));
+      searchXML.documentElement.appendChild(node);
+    }
+
+    if (searchParams.mestoOrganaVlasti) {
+      const node = document.createElementNS(null, "mestoOrganaVlasti");
+      node.appendChild(document.createTextNode(searchParams.mestoOrganaVlasti));
+      searchXML.documentElement.appendChild(node);
+    }
+
+    if (searchParams.datumZahteva) {
+      const node = document.createElementNS(null, "datumZahteva");
+      node.appendChild(document.createTextNode(searchParams.datumZahteva));
+      searchXML.documentElement.appendChild(node);
+    }
+
+    if (searchParams.imePodnosioca) {
+      const node = document.createElementNS(null, "imePodnosioca");
+      node.appendChild(document.createTextNode(searchParams.imePodnosioca));
+      searchXML.documentElement.appendChild(node);
+    }
+
+    if (searchParams.mestoPodnosioca) {
+      const node = document.createElementNS(null, "mestoPodnosioca");
+      node.appendChild(document.createTextNode(searchParams.mestoPodnosioca));
+      searchXML.documentElement.appendChild(node);
+    }
+
+    const node = document.createElementNS(null, "orOperator");
+    node.appendChild(document.createTextNode(searchParams.orOperator));
+    searchXML.documentElement.appendChild(node);
+
+    const searchStr = new XMLSerializer().serializeToString(searchXML);
+
+    console.log(searchStr);
+    const results = yield call(apiRequest, advancedSearchResultsAPI(searchStr));
+    yield put(advancedStoreSearchResults(results));
   } catch (e) {
     console.error(e);
   }

@@ -50,6 +50,14 @@ export const NavBar = () => {
     history.push("information");
   };
 
+  const searchRequests = () => {
+    history.push("searchRequests");
+  };
+
+  const searchRequestsAdvanced = () => {
+    history.push("advancedSearchRequests");
+  };
+
   return (
     <AppBar position='static' className={navbarStyle.navbar}>
       <Toolbar>
@@ -71,6 +79,12 @@ export const NavBar = () => {
               <>
                 <Button color='inherit' onClick={requests}>
                   Requests
+                </Button>
+                <Button color='inherit' onClick={searchRequests}>
+                  Search requests
+                </Button>
+                <Button color='inherit' onClick={searchRequestsAdvanced}>
+                  Search requests - Advanced
                 </Button>
                 <Button color='inherit' onClick={requestAnswers}>
                   Request Answers

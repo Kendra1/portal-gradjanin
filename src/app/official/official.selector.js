@@ -12,6 +12,11 @@ const _selectInformationXTHML = (state) => state.official.currentXHTML;
 
 const _selectInformationToPDF = (state) => state.official.currentPDF;
 
+const _selectSearchResults = (state) => state.official.searchResults;
+
+const _selectAdvancedSearchResults = (state) =>
+  state.official.advancedSearchResults;
+
 export const selectRequests = createSelector(
   [_selectRequests],
   (requests) => requests
@@ -40,4 +45,14 @@ export const selectInformationXHTML = createSelector(
 export const selectInformationPDF = createSelector(
   [_selectInformationToPDF],
   (currentPDF) => currentPDF
+);
+
+export const selectSearchResults = createSelector(
+  [_selectSearchResults],
+  (searchResults) => searchResults
+);
+
+export const selectAdvancedSearchResults = createSelector(
+  [_selectAdvancedSearchResults],
+  (advancedSearchResults) => advancedSearchResults
 );

@@ -7,6 +7,8 @@ import {
   STORE_CREATION,
   GET_INFORMATION_PATTERN,
   CREATE_RESPONSE,
+  SEARCH_REQUESTS,
+  ADVANCED_SEARCH_REQUESTS,
 } from "./official.constants";
 import {
   getRequestsSaga,
@@ -16,6 +18,8 @@ import {
   storeCreationSaga,
   createResponseSaga,
   getInformationPatternSaga,
+  searchRequestsSaga,
+  advancedSearchRequestsSaga,
 } from "./official.saga";
 
 export function* watchOfficialSaga() {
@@ -25,4 +29,6 @@ export function* watchOfficialSaga() {
   yield takeLatest(GET_INFORMATION, getInformationSaga);
   yield takeLatest(CREATE_RESPONSE, createResponseSaga);
   yield takeLatest(GET_INFORMATION_PATTERN, getInformationPatternSaga);
+  yield takeLatest(SEARCH_REQUESTS, searchRequestsSaga);
+  yield takeLatest(ADVANCED_SEARCH_REQUESTS, advancedSearchRequestsSaga);
 }

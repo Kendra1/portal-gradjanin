@@ -13,6 +13,10 @@ import {
   STORE_CREATION,
   STORE_INFORMATION_PATTERN,
   GET_INFORMATION_PATTERN,
+  SEARCH_REQUESTS,
+  STORE_SEARCH_RESULTS,
+  ADVANCED_STORE_SEARCH_RESULTS,
+  ADVANCED_SEARCH_REQUESTS,
 } from "./official.constants";
 
 export const getRequests = () => ({
@@ -80,5 +84,25 @@ export const exportInformationPDF = (payload) => ({
 
 export const storeInformationPDF = (payload) => ({
   type: STORE_INFORMATION_PDF,
+  payload,
+});
+
+export const searchRequests = (payload) => ({
+  type: SEARCH_REQUESTS,
+  payload,
+});
+
+export const storeSearchResults = (payload) => ({
+  type: STORE_SEARCH_RESULTS,
+  payload,
+});
+
+export const advancedSearchRequests = (payload) => ({
+  type: ADVANCED_SEARCH_REQUESTS,
+  payload,
+});
+
+export const advancedStoreSearchResults = (payload) => ({
+  type: ADVANCED_STORE_SEARCH_RESULTS,
   payload,
 });
