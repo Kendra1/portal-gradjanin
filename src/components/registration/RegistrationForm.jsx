@@ -85,40 +85,19 @@ export const RegistrationForm = () => {
         Icon={EmailIcon}
       />
       <FormItem
-        label={"Username"}
-        value={username}
-        handleValueChange={handleUsernameChange}
-        selector={errorSelectors.selectUsernameFieldErrors}
-        Icon={PersonIcon}
-      />
-      <FormItem
         label={"Password"}
         value={password}
         handleValueChange={handlePasswordChange}
         selector={errorSelectors.selectPasswordFieldErrors}
         Icon={LockIcon}
       />
-      <FormItem
-        label={"Password Confirmation"}
-        value={passwordConfirmation}
-        handleValueChange={handlePasswordConfirmationChange}
-        selector={errorSelectors.selectPasswordConfirmationFieldErrors}
-        Icon={LockIcon}
-      />
-      <FormItem
-        label={"Birth Date"}
-        value={birthDate}
-        handleValueChange={handleBirthDateChange}
-        selector={errorSelectors.selectBirthDateFieldErrors}
-        Icon={EventIcon}
-      />
       <Grid item>
         <Grid item>
           <Button
             disabled={isLoading}
-            type="submit"
-            variant="contained"
-            color="secondary"
+            type='submit'
+            variant='contained'
+            color='secondary'
           >
             REGISTER
           </Button>

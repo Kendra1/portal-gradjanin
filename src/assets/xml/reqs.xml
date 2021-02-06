@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<zahtevCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pred="http://examples/predicate/" xmlns:zah="http://www.ftn.uns.ac.rs/zahtev" xmlns:types="http://www.ftn.uns.ac.rs/types">
+    <zah:dokument_zahtev id="0df65b90-f6e1-4cf0-86a6-d3959069ae61" userId="jelenicaad@gmail.com" datum="2021-01-29+01:00" about="http://www.ftn.uns.ac.rs/zahtev/0df65b90-f6e1-4cf0-86a6-d3959069ae61" status="pending">
+        <zah:organ_vlasti>
+            <types:naziv_organa property="pred:naziv_organa">Organ vlasti</types:naziv_organa>
+            <types:adresa>
+                <types:mesto datatype="xs:string" property="pred:mesto">Subotica</types:mesto>
+                <types:ulica datatype="xs:string" property="pred:ulica">Brace Radic</types:ulica>
+                <types:broj datatype="xs:string" property="pred:broj">22</types:broj>
+            </types:adresa>
+        </zah:organ_vlasti>
+        <zah:naslov_dokumenta>
+        З А Х Т Е В
+        за приступ информацији од јавног значаја
+    </zah:naslov_dokumenta>
+        <zah:zakon>
+        На основу члана 15. ст. 1. Закона о слободном приступу информацијама од јавног значаја („Службени гласник
+        РС“, бр. 120/04, 54/07, 104/09 и 36/10), од горе наведеног органа захтевам:
+        
+            <zah:napomena id="1"></zah:napomena>
+        </zah:zakon>
+        <zah:lista_zahteva>
+            <zah:zahtev checked="true" tip_zahteva="posedovanje_informacije">обавештење да ли поседује тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="uvid_u_dokument">увид у документ који садржи тражену информацију;⁫
+        </zah:zahtev>
+            <zah:zahtev checked="true" tip_zahteva="kopija_dokumenta">копију документа који садржи тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="dostavljanje_kopije_dokumenta">
+            достављање копије документа који садржи тражену информацију
+            
+                <zah:napomena id="2"></zah:napomena>
+                <zah:lista_nacina>
+                    <zah:nacin checked="false" tip_dostave="postom"/>
+                    <zah:nacin checked="true" tip_dostave="elektronski"/>
+                    <zah:nacin checked="false" tip_dostave="faksom"/>
+                    <zah:nacin checked="false" tip_dostave="drugi_nacin">
+                        <zah:drugi_nacin>
+                            <zah:sadrzaj></zah:sadrzaj>
+                            <zah:napomena id="3"></zah:napomena>
+                        </zah:drugi_nacin>
+                    </zah:nacin>
+                </zah:lista_nacina>
+            </zah:zahtev>
+        </zah:lista_zahteva>
+        <zah:informacije>
+        Овај захтев се односи на следеће информације:
+        
+            <zah:sadrzaj_informacija>v jhy ,kjuyv jyhuv yv y</zah:sadrzaj_informacija>
+        навести што прецизнији опис информације која се
+        тражи као и друге податке који олакшавају проналажење
+        тражене информације
+        </zah:informacije>
+        <zah:mesto_i_datum>
+        У  
+            <types:mesto property="pred:mesto">Subotici</types:mesto>,
+        dana
+            <types:datum datatype="xs:date" property="pred:datum">2021-01-01</types:datum> godine
+        </zah:mesto_i_datum>
+        <zah:podnosilac_zahteva>
+            <types:ime datatype="xs:string" property="pred:ime">Ime podnosioca</types:ime>
+            <types:prezime datatype="xs:string" property="pred:prezime">Prezime podnosioca</types:prezime>
+            <types:adresa>
+                <types:mesto property="pred:mesto">Subotica</types:mesto>
+                <types:ulica property="pred:ulica">Brace Ribnikara</types:ulica>
+                <types:broj property="pred:broj">1</types:broj>
+            </types:adresa>
+            <types:drugi_podaci_za_kontakt>test@email.com</types:drugi_podaci_za_kontakt>
+            <types:potpis>Potpis</types:potpis>
+        </zah:podnosilac_zahteva>
+        <zah:lista_napomena naslov="Napomene">
+            <zah:napomena id="1" labela="*">У кућици означити која законска права на приступ информацијама желите да
+            остварите.
+        </zah:napomena>
+            <zah:napomena id="2" labela="**">У кућици означити начин достављања копије докумената.</zah:napomena>
+            <zah:napomena id="3" labela="*">Када захтевате други начин достављања обавезно уписати који начин
+            достављања
+            захтевате.
+        </zah:napomena>
+        </zah:lista_napomena>
+    </zah:dokument_zahtev>
+    <zah:dokument_zahtev id="fb7a3810-89b1-4fdf-b9f1-3a355d020e13" userId="jelenicaad@gmail.com" datum="2021-01-29+01:00" about="http://www.ftn.uns.ac.rs/zahtev/fb7a3810-89b1-4fdf-b9f1-3a355d020e13" status="pending">
+        <zah:organ_vlasti>
+            <types:naziv_organa property="pred:naziv_organa">Organ vlasti</types:naziv_organa>
+            <types:adresa>
+                <types:mesto datatype="xs:string" property="pred:mesto">Subotica</types:mesto>
+                <types:ulica datatype="xs:string" property="pred:ulica">Brace Radic</types:ulica>
+                <types:broj datatype="xs:string" property="pred:broj">22</types:broj>
+            </types:adresa>
+        </zah:organ_vlasti>
+        <zah:naslov_dokumenta>
+        З А Х Т Е В
+        за приступ информацији од јавног значаја
+    </zah:naslov_dokumenta>
+        <zah:zakon>
+        На основу члана 15. ст. 1. Закона о слободном приступу информацијама од јавног значаја („Службени гласник
+        РС“, бр. 120/04, 54/07, 104/09 и 36/10), од горе наведеног органа захтевам:
+        
+            <zah:napomena id="1"></zah:napomena>
+        </zah:zakon>
+        <zah:lista_zahteva>
+            <zah:zahtev checked="true" tip_zahteva="posedovanje_informacije">обавештење да ли поседује тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="uvid_u_dokument">увид у документ који садржи тражену информацију;⁫
+        </zah:zahtev>
+            <zah:zahtev checked="true" tip_zahteva="kopija_dokumenta">копију документа који садржи тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="dostavljanje_kopije_dokumenta">
+            достављање копије документа који садржи тражену информацију
+            
+                <zah:napomena id="2"></zah:napomena>
+                <zah:lista_nacina>
+                    <zah:nacin checked="false" tip_dostave="postom"/>
+                    <zah:nacin checked="true" tip_dostave="elektronski"/>
+                    <zah:nacin checked="false" tip_dostave="faksom"/>
+                    <zah:nacin checked="false" tip_dostave="drugi_nacin">
+                        <zah:drugi_nacin>
+                            <zah:sadrzaj></zah:sadrzaj>
+                            <zah:napomena id="3"></zah:napomena>
+                        </zah:drugi_nacin>
+                    </zah:nacin>
+                </zah:lista_nacina>
+            </zah:zahtev>
+        </zah:lista_zahteva>
+        <zah:informacije>
+        Овај захтев се односи на следеће информације:
+        
+            <zah:sadrzaj_informacija>v jhy ,kjuyv jyhuv yv y</zah:sadrzaj_informacija>
+        навести што прецизнији опис информације која се
+        тражи као и друге податке који олакшавају проналажење
+        тражене информације
+        </zah:informacije>
+        <zah:mesto_i_datum>
+        У  
+            <types:mesto property="pred:mesto">Subotici</types:mesto>,
+        dana
+            <types:datum datatype="xs:date" property="pred:datum">2021-01-01</types:datum> godine
+        </zah:mesto_i_datum>
+        <zah:podnosilac_zahteva>
+            <types:ime datatype="xs:string" property="pred:ime">Ime podnosioca</types:ime>
+            <types:prezime datatype="xs:string" property="pred:prezime">Prezime podnosioca</types:prezime>
+            <types:adresa>
+                <types:mesto property="pred:mesto">Subotica</types:mesto>
+                <types:ulica property="pred:ulica">Brace Ribnikara</types:ulica>
+                <types:broj property="pred:broj">1</types:broj>
+            </types:adresa>
+            <types:drugi_podaci_za_kontakt>test@email.com</types:drugi_podaci_za_kontakt>
+            <types:potpis>Potpis</types:potpis>
+        </zah:podnosilac_zahteva>
+        <zah:lista_napomena naslov="Napomene">
+            <zah:napomena id="1" labela="*">У кућици означити која законска права на приступ информацијама желите да
+            остварите.
+        </zah:napomena>
+            <zah:napomena id="2" labela="**">У кућици означити начин достављања копије докумената.</zah:napomena>
+            <zah:napomena id="3" labela="*">Када захтевате други начин достављања обавезно уписати који начин
+            достављања
+            захтевате.
+        </zah:napomena>
+        </zah:lista_napomena>
+    </zah:dokument_zahtev>
+    <zah:dokument_zahtev id="9ea84950-adb3-4594-a032-736167fd729a" userId="test1@gmail.test" datum="2021-01-28+01:00" about="http://www.ftn.uns.ac.rs/zahtev/9ea84950-adb3-4594-a032-736167fd729a" status="pending">
+        <zah:organ_vlasti>
+            <types:naziv_organa property="pred:naziv_organa">Organ vlasti</types:naziv_organa>
+            <types:adresa>
+                <types:mesto datatype="xs:string" property="pred:mesto">Subotica</types:mesto>
+                <types:ulica datatype="xs:string" property="pred:ulica">Brace Radic</types:ulica>
+                <types:broj datatype="xs:string" property="pred:broj">22</types:broj>
+            </types:adresa>
+        </zah:organ_vlasti>
+        <zah:naslov_dokumenta>
+        З А Х Т Е В
+        за приступ информацији од јавног значаја
+    </zah:naslov_dokumenta>
+        <zah:zakon>
+        На основу члана 15. ст. 1. Закона о слободном приступу информацијама од јавног значаја („Службени гласник
+        РС“, бр. 120/04, 54/07, 104/09 и 36/10), од горе наведеног органа захтевам:
+        
+            <zah:napomena id="1"></zah:napomena>
+        </zah:zakon>
+        <zah:lista_zahteva>
+            <zah:zahtev checked="true" tip_zahteva="posedovanje_informacije">обавештење да ли поседује тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="uvid_u_dokument">увид у документ који садржи тражену информацију;⁫
+        </zah:zahtev>
+            <zah:zahtev checked="true" tip_zahteva="kopija_dokumenta">копију документа који садржи тражену информацију;
+        </zah:zahtev>
+            <zah:zahtev checked="false" tip_zahteva="dostavljanje_kopije_dokumenta">
+            достављање копије документа који садржи тражену информацију
+            
+                <zah:napomena id="2"></zah:napomena>
+                <zah:lista_nacina>
+                    <zah:nacin checked="false" tip_dostave="postom"/>
+                    <zah:nacin checked="true" tip_dostave="elektronski"/>
+                    <zah:nacin checked="false" tip_dostave="faksom"/>
+                    <zah:nacin checked="false" tip_dostave="drugi_nacin">
+                        <zah:drugi_nacin>
+                            <zah:sadrzaj></zah:sadrzaj>
+                            <zah:napomena id="3"></zah:napomena>
+                        </zah:drugi_nacin>
+                    </zah:nacin>
+                </zah:lista_nacina>
+            </zah:zahtev>
+        </zah:lista_zahteva>
+        <zah:informacije>
+        Овај захтев се односи на следеће информације:
+        
+            <zah:sadrzaj_informacija>v jhy ,kjuyv jyhuv yv y</zah:sadrzaj_informacija>
+        навести што прецизнији опис информације која се
+        тражи као и друге податке који олакшавају проналажење
+        тражене информације
+        </zah:informacije>
+        <zah:mesto_i_datum>
+        У  
+            <types:mesto property="pred:mesto">Subotici</types:mesto>,
+        dana
+            <types:datum datatype="xs:date" property="pred:datum">2021-01-01</types:datum> godine
+        </zah:mesto_i_datum>
+        <zah:podnosilac_zahteva>
+            <types:ime datatype="xs:string" property="pred:ime">Ime podnosioca</types:ime>
+            <types:prezime datatype="xs:string" property="pred:prezime">Prezime podnosioca</types:prezime>
+            <types:adresa>
+                <types:mesto property="pred:mesto">Subotica</types:mesto>
+                <types:ulica property="pred:ulica">Brace Ribnikara</types:ulica>
+                <types:broj property="pred:broj">1</types:broj>
+            </types:adresa>
+            <types:drugi_podaci_za_kontakt>test@email.com</types:drugi_podaci_za_kontakt>
+            <types:potpis>Potpis</types:potpis>
+        </zah:podnosilac_zahteva>
+        <zah:lista_napomena naslov="Napomene">
+            <zah:napomena id="1" labela="*">У кућици означити која законска права на приступ информацијама желите да
+            остварите.
+        </zah:napomena>
+            <zah:napomena id="2" labela="**">У кућици означити начин достављања копије докумената.</zah:napomena>
+            <zah:napomena id="3" labela="*">Када захтевате други начин достављања обавезно уписати који начин
+            достављања
+            захтевате.
+        </zah:napomena>
+        </zah:lista_napomena>
+    </zah:dokument_zahtev>
+</zahtevCollection>

@@ -1,4 +1,3 @@
-
 export const persistLoggedUser = (user) => {
   localStorage.setItem("logged_user", JSON.stringify(user));
 };

@@ -1,12 +1,13 @@
-
-export const loginAPI = (data) => ({
-  uri: "/api/auth/login",
-  method: "post",
-  data,
-});
+export const loginAPI = (data) => {
+  return {
+    uri: "/api/auth/login",
+    method: "post",
+    data,
+  };
+};
 
 export const registerAPI = (data) => ({
-  uri: "/users/register",
+  uri: "/api/auth/register",
   method: "post",
   data,
 });

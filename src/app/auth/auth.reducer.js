@@ -1,15 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import { STORE_LOGGED_USER, CLEAR_LOGGED_USER } from './auth.constants';
+import { STORE_LOGGED_USER, CLEAR_LOGGED_USER } from "./auth.constants";
 
 const initialState = {
   loggedUser: null,
 };
 
-const loggedUserReducer = (
-  state = initialState.loggedUser,
-  action,
-) => {
+const loggedUserReducer = (state = initialState.loggedUser, action) => {
   if (action.type === STORE_LOGGED_USER) {
     return action.payload;
   } else if (action.type === CLEAR_LOGGED_USER) {

@@ -4,10 +4,10 @@ import axios from "axios";
 import { selectLoggedUserToken } from "../auth/auth.selectors";
 
 const api = axios.create({
-  baseURL: "http://localhost:8081",
+  baseURL: process.env.REACT_APP_API_URL || "",
   headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json",
+    "Content-Type": "application/xml",
+    Accept: "application/xml",
   },
 });
 
@@ -17,7 +17,6 @@ export default function* apiRequest(requestInfo) {
     axios.CancelToken,
     axios.CancelToken.source,
   ]);
-
   try {
     const response = yield call([api, api.request], {
       url: requestInfo.uri,

@@ -1,31 +1,32 @@
 import React, { useCallback, useEffect, useMemo } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
-import { getRequests } from "../../app/official/official.action";
-import { selectRequests } from "../../app/official/official.selector";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { getInformation } from "../../app/official/official.action";
+import { selectInformation } from "../../app/official/official.selector";
 
-export const Dashboard = () => {
+export const Information = () => {
   const history = useHistory();
+  const loggedUser = JSON.parse(localStorage.getItem("logged_user"));
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRequests());
-  }, [dispatch]);
+    dispatch(getInformation());
+  }, [dispatch, loggedUser.role]);
 
-  const requestsState = useSelector(selectRequests);
+  const information = useSelector(selectInformation, shallowEqual);
 
   var parser = new DOMParser();
-  var xmlDoc = parser.parseFromString(requestsState, "text/xml");
+  var xmlDoc = parser.parseFromString(information, "text/xml");
   const requests = useMemo(
-    () => (xmlDoc ? xmlDoc.getElementsByTagName("zah:dokument_zahtev") : []),
+    () => (xmlDoc ? xmlDoc.getElementsByTagName("ob:obavestenje") : []),
     [xmlDoc]
   );
+
   const handleSingleRequest = useCallback(
-    (request, requestId) => {
-      localStorage.setItem("currentRequest", request);
-      localStorage.setItem("currentRequestID", requestId);
-      history.push("handleRequest");
+    (request) => {
+      localStorage.setItem("currentInformation", request);
+      history.push("singleInformation");
     },
     [history]
   );
@@ -34,9 +35,7 @@ export const Dashboard = () => {
     const array = [];
     for (let i = 0; i < xmls.length; i++) {
       const id = xmls[i].getAttribute("id");
-      const status = xmls[i].getAttribute("status");
       const element = {
-        status: status,
         id: id,
         document: new XMLSerializer().serializeToString(xmls[i]),
       };
@@ -47,9 +46,8 @@ export const Dashboard = () => {
 
   return (
     <div>
-      {mapXmlToString(requests).map((req, i) => (
+      {mapXmlToString(requests).map((req) => (
         <div
-          key={`zahtev_id_${i}`}
           style={{
             padding: "20px",
             border: "1px solid grey",
@@ -64,9 +62,9 @@ export const Dashboard = () => {
               display: "inline-block",
               width: "50%",
             }}
-            onClick={() => handleSingleRequest(req.document, req.id)}
+            onClick={() => +req.document}
           >
-            Handle request
+            Go to Information
           </Button>
         </div>
       ))}

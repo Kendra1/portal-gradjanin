@@ -26,19 +26,70 @@ export const NavBar = () => {
     history.push("registration");
   };
 
+  const sendRequest = () => {
+    history.push("sendRequest");
+  };
+
+  const myRequests = () => {
+    history.push("citizenDashboard");
+  };
+
+  const myInformation = () => {
+    history.push("myInformation");
+  };
+
+  const requests = () => {
+    history.push("");
+  };
+
+  const requestAnswers = () => {
+    history.push("requestAnswers");
+  };
+
+  const allInformation = () => {
+    history.push("information");
+  };
+
   return (
-    <AppBar position="static" className={navbarStyle.navbar}>
+    <AppBar position='static' className={navbarStyle.navbar}>
       <Toolbar>
         {loggedUser ? (
-          <Button color="inherit" onClick={logout}>
-            Logout
-          </Button>
+          <>
+            {loggedUser && loggedUser.role === "ROLE_GRADJANIN" ? (
+              <>
+                <Button color='inherit' onClick={sendRequest}>
+                  Send Request
+                </Button>
+                <Button color='inherit' onClick={myRequests}>
+                  My Requests
+                </Button>
+                <Button color='inherit' onClick={myInformation}>
+                  My Information
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button color='inherit' onClick={requests}>
+                  Requests
+                </Button>
+                <Button color='inherit' onClick={requestAnswers}>
+                  Request Answers
+                </Button>
+                <Button color='inherit' onClick={allInformation}>
+                  INFORMATION
+                </Button>
+              </>
+            )}
+            <Button color='inherit' onClick={logout}>
+              Logout
+            </Button>
+          </>
         ) : (
           <>
-            <Button color="inherit" onClick={login}>
+            <Button color='inherit' onClick={login}>
               Login
             </Button>
-            <Button color="inherit" onClick={registrate}>
+            <Button color='inherit' onClick={registrate}>
               Registrate
             </Button>
           </>

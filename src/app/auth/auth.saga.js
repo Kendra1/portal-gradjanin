@@ -15,13 +15,22 @@ import {
 } from "../account/account.actions";
 
 export function* registerNewUser(action) {
-  yield call(apiRequest, registerAPI(action.payload));
+  yield call(apiRequest, registerAPI(action));
 }
 
 export function* logUserIn(userCredentials) {
   const loggedUser = yield call(apiRequest, loginAPI(userCredentials));
-  yield call(persistLoggedUser, loggedUser);
-  yield put(storeLoggedUser(loggedUser));
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(loggedUser, "text/xml");
+  const loggedUserObject = {
+    email: xmlDoc.getElementsByTagName("email")[0].textContent,
+    firstName: xmlDoc.getElementsByTagName("firstName")[0].textContent,
+    lastName: xmlDoc.getElementsByTagName("lastName")[0].textContent,
+    role: xmlDoc.getElementsByTagName("role")[0].textContent,
+    token: xmlDoc.getElementsByTagName("token")[0].textContent,
+  };
+  yield call(persistLoggedUser, loggedUserObject);
+  yield put(storeLoggedUser(loggedUserObject));
 }
 
 export function* initAuth() {
