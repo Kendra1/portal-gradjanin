@@ -15,7 +15,7 @@ const _selectInformationToPDF = (state) => state.official.currentPDF;
 const _selectSearchResults = (state) => state.official.searchResults;
 
 const _selectAdvancedSearchResults = (state) =>
-  state.official.advancedSearchResults;
+  state.official.advancedSearchRequests;
 
 export const selectRequests = createSelector(
   [_selectRequests],
@@ -54,5 +54,7 @@ export const selectSearchResults = createSelector(
 
 export const selectAdvancedSearchResults = createSelector(
   [_selectAdvancedSearchResults],
-  (advancedSearchResults) => advancedSearchResults
+  (advancedSearchResults) => {
+    return advancedSearchResults;
+  }
 );

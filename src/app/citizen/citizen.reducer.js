@@ -7,6 +7,8 @@ import {
   STORE_XHTML,
   STORE_REQUEST_PATTERN,
   CLEAR_XHTML,
+  STORE_RDF,
+  STORE_JSON,
 } from "./citizen.constants";
 
 const initialState = {
@@ -15,6 +17,8 @@ const initialState = {
   pattern: null,
   currentPDF: null,
   currentXHTML: null,
+  currentRDF: null,
+  currentJSON: null,
 };
 
 const requestsReducer = (state = initialState.requests, action) => {
@@ -56,10 +60,26 @@ const currentXTHMLReducer = (state = initialState.currentXHTML, action) => {
   return state;
 };
 
+const currentRDFReducer = (state = initialState.currentRDF, action) => {
+  if (action.type === STORE_RDF) {
+    return action.payload;
+  }
+  return state;
+};
+
+const currentJSONReducer = (state = initialState.currentJSON, action) => {
+  if (action.type === STORE_JSON) {
+    return action.payload;
+  }
+  return state;
+};
+
 export const citizenReducer = combineReducers({
   requests: requestsReducer,
   information: informationReducer,
   pattern: patternReducer,
   currentPDF: currentPDFReducer,
   currentXHTML: currentXTHMLReducer,
+  currentRDF: currentRDFReducer,
+  currentJSON: currentJSONReducer,
 });

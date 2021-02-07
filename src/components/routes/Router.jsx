@@ -11,8 +11,6 @@ import { SendRequest } from "../pages/SendRequest";
 import { HandleRequest } from "../pages/HandleRequest";
 import { RedirectComponent } from "../common/RedirectComponent";
 import { RespondToRequest } from "../pages/RespondToRequest";
-import { XHTMLPage } from "../pages/XHTMLPage";
-import { PDFPage } from "../pages/PDFPage";
 import { CitizenInformation } from "../pages/CitizenInformation";
 import { Information } from "../pages/Information";
 import { AdvancedSearch } from "../pages/AdvancedSearch";
@@ -32,8 +30,6 @@ export const Router = () => (
       <PrivateRoute path='/respondToRequest' component={RespondToRequest} />
       <PrivateRoute path='/information' component={Information} />
       <PrivateRoute path='/myInformation' component={CitizenInformation} />
-      <PrivateRoute path='/pdf-export' component={PDFPage} />
-      <PrivateRoute path='/xhtml-export' component={XHTMLPage} />
       <PrivateRoute path='/searchRequests' component={SearchRequest} />
       <PrivateRoute path='/advancedSearchRequests' component={AdvancedSearch} />
       <PrivateRoute path='/singleInformation' component={SingleInformation} />

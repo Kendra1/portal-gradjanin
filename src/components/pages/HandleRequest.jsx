@@ -106,11 +106,9 @@ export const HandleRequest = () => {
 
   const pdfBytes = useSelector(selectCurrentPDF);
   const xhtmlBytes = useSelector(selectCurrentXHTML);
-  console.log("BUTES:", pdfBytes);
 
   useEffect(() => {
     if (pdfBytes) {
-      console.log("PDF BYTES EFFETCT", pdfBytes);
       const fileUrl = URL.createObjectURL(pdfBytes);
       const a = document.createElement("a");
       document.body.appendChild(a);
@@ -125,7 +123,6 @@ export const HandleRequest = () => {
 
   useEffect(() => {
     if (xhtmlBytes) {
-      console.log("PDF BYTES EFFETCT", xhtmlBytes);
       const file = new Blob([xhtmlBytes], { type: "application/html" });
       const fileUrl = URL.createObjectURL(file);
       const a = document.createElement("a");
@@ -185,6 +182,8 @@ export const HandleRequest = () => {
       </a>
       <Button onClick={handleExportToPDF}>Export PDF</Button>
       <Button onClick={handleExportToXHTML}>Export XHTML</Button>
+      <Button>Export RDF</Button>
+      <Button>Export JSON</Button>
       {status === "PENDING" ? (
         <>
           <Button onClick={respondToRequest}>Accept request</Button>

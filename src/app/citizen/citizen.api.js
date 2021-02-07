@@ -28,3 +28,13 @@ export const exportToPDFAPI = (id) => ({
   uri: `api/zahtev/generate/pdf/${id}`,
   method: "get",
 });
+
+export const exportToRdfAPI = (id) => ({
+  uri: `/api/zahtev/export/rdf/${id}`,
+  method: "get",
+});
+
+export const exportToJsonAPI = (id) => ({
+  uri: `api/zahtev/export/json/${id}`,
+  method: "get",
+});

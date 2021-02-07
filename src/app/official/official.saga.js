@@ -1,8 +1,9 @@
-import { put, call } from "redux-saga/effects";
+import { put, call, delay } from "redux-saga/effects";
 import apiRequest from "../api/api.saga";
 import {
   advancedStoreSearchResults,
   storeCreation,
+  storeFinished,
   storeInformation,
   storeInformationPattern,
   storeInformationPDF,
@@ -141,7 +142,6 @@ export function* searchRequestsSaga(action) {
 export function* advancedSearchRequestsSaga(action) {
   try {
     const searchParams = action.payload;
-    console.log(action.payload);
     const searchXML = document.implementation.createDocument(
       null,
       `searchZahtevMap`
@@ -183,9 +183,9 @@ export function* advancedSearchRequestsSaga(action) {
 
     const searchStr = new XMLSerializer().serializeToString(searchXML);
 
-    console.log(searchStr);
     const results = yield call(apiRequest, advancedSearchResultsAPI(searchStr));
     yield put(advancedStoreSearchResults(results));
+    yield delay(1000);
   } catch (e) {
     console.error(e);
   }

@@ -8,6 +8,7 @@ import {
   STORE_INFORMATION_XHTML,
   STORE_REQUESTS,
   GET_INFORMATION,
+  STORE_FINISHED,
   STORE_INFORMATION,
   CREATE_RESPONSE,
   STORE_CREATION,
@@ -15,7 +16,7 @@ import {
   GET_INFORMATION_PATTERN,
   SEARCH_REQUESTS,
   STORE_SEARCH_RESULTS,
-  ADVANCED_STORE_SEARCH_RESULTS,
+  STORE_ADVANCED_SEARCH_REQUESTS,
   ADVANCED_SEARCH_REQUESTS,
 } from "./official.constants";
 
@@ -103,6 +104,6 @@ export const advancedSearchRequests = (payload) => ({
 });
 
 export const advancedStoreSearchResults = (payload) => ({
-  type: ADVANCED_STORE_SEARCH_RESULTS,
+  type: STORE_ADVANCED_SEARCH_REQUESTS,
   payload,
 });

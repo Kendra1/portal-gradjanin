@@ -7,14 +7,14 @@ import {
   STORE_CREATION,
   STORE_INFORMATION_PATTERN,
   STORE_SEARCH_RESULTS,
-  ADVANCED_STORE_SEARCH_RESULTS,
+  STORE_ADVANCED_SEARCH_REQUESTS,
 } from "./official.constants";
 
 const initialState = {
   requests: [],
   information: [],
   searchResults: [],
-  advancedSearchRequests: [],
+  advancedSearchRequests: null,
   creation: null,
   pattern: null,
   currentXHTML: null,
@@ -46,7 +46,7 @@ const advancedSearchResultsReducer = (
   state = initialState.advancedSearchRequests,
   action
 ) => {
-  if (action.type === ADVANCED_STORE_SEARCH_RESULTS) {
+  if (action.type === STORE_ADVANCED_SEARCH_REQUESTS) {
     return action.payload;
   }
   return state;

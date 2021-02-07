@@ -6,6 +6,8 @@ import {
   SEND_REQUEST,
   EXPORT_TO_XHTML,
   GET_REQUEST_PATTERN,
+  EXPORT_TO_RDF,
+  EXPORT_TO_JSON,
 } from "./citizen.constants";
 import {
   getMyRequestsSaga,
@@ -14,6 +16,8 @@ import {
   exportToPDFSaga,
   exportToXHTMLSaga,
   getRequestPatternSaga,
+  exportToRDFSaga,
+  exportToJSONSaga,
 } from "./citizen.saga";
 
 export function* watchCitizenSaga() {
@@ -22,5 +26,7 @@ export function* watchCitizenSaga() {
   yield takeLatest(GET_MY_INFORMATION, getMyInformationSaga);
   yield takeLatest(EXPORT_TO_PDF, exportToPDFSaga);
   yield takeLatest(EXPORT_TO_XHTML, exportToXHTMLSaga);
+  yield takeLatest(EXPORT_TO_RDF, exportToRDFSaga);
   yield takeLatest(GET_REQUEST_PATTERN, getRequestPatternSaga);
+  yield takeLatest(EXPORT_TO_JSON, exportToJSONSaga);
 }

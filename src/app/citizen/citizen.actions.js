@@ -59,3 +59,23 @@ export const storePDF = (payload) => ({
 export const clearPDF = () => ({
   type: constants.CLEAR_PDF,
 });
+
+export const exportToRDF = (payload) => ({
+  type: constants.EXPORT_TO_RDF,
+  payload,
+});
+
+export const storeRDF = (payload) => ({
+  type: constants.STORE_RDF,
+  payload,
+});
+
+export const exportToJSON = (payload) => ({
+  type: constants.EXPORT_TO_JSON,
+  payload,
+});
+
+export const storeJSON = (payload) => ({
+  type: constants.STORE_JSON,
+  payload,
+});

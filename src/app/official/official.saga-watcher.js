@@ -4,22 +4,24 @@ import {
   DENY_REQUEST,
   GET_INFORMATION,
   GET_REQUESTS,
-  STORE_CREATION,
   GET_INFORMATION_PATTERN,
   CREATE_RESPONSE,
   SEARCH_REQUESTS,
   ADVANCED_SEARCH_REQUESTS,
+  EXPORT_INFORMATION_PDF,
+  EXPORT_INFORMATION_XHTML,
 } from "./official.constants";
 import {
   getRequestsSaga,
   acceptRequestSaga,
   denyRequestSaga,
   getInformationSaga,
-  storeCreationSaga,
+  exportInformationToXTHMLSaga,
   createResponseSaga,
   getInformationPatternSaga,
   searchRequestsSaga,
   advancedSearchRequestsSaga,
+  exportInformationPDFSaga,
 } from "./official.saga";
 
 export function* watchOfficialSaga() {
@@ -31,4 +33,6 @@ export function* watchOfficialSaga() {
   yield takeLatest(GET_INFORMATION_PATTERN, getInformationPatternSaga);
   yield takeLatest(SEARCH_REQUESTS, searchRequestsSaga);
   yield takeLatest(ADVANCED_SEARCH_REQUESTS, advancedSearchRequestsSaga);
+  yield takeLatest(EXPORT_INFORMATION_PDF, exportInformationPDFSaga);
+  yield takeLatest(EXPORT_INFORMATION_XHTML, exportInformationToXTHMLSaga);
 }

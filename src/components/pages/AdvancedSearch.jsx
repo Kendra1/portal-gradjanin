@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import Search from "@material-ui/icons/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -74,7 +74,6 @@ export const AdvancedSearch = () => {
 
   const requestsState = useSelector(selectAdvancedSearchResults);
 
-  console.log("requestssta:", requestsState);
   var parser = useMemo(() => new DOMParser(), []);
   var xmlDoc = useMemo(
     () => parser.parseFromString(requestsState, "text/xml"),

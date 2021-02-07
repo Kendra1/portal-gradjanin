@@ -72,7 +72,7 @@ export const NavBar = () => {
                   My Requests
                 </Button>
                 <Button color='inherit' onClick={myInformation}>
-                  My Information
+                  My Responses
                 </Button>
               </>
             ) : (
@@ -85,9 +85,6 @@ export const NavBar = () => {
                 </Button>
                 <Button color='inherit' onClick={searchRequestsAdvanced}>
                   Search requests - Advanced
-                </Button>
-                <Button color='inherit' onClick={requestAnswers}>
-                  Request Answers
                 </Button>
                 <Button color='inherit' onClick={allInformation}>
                   INFORMATION

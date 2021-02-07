@@ -39,7 +39,6 @@ export const SingleInformation = () => {
 
   useEffect(() => {
     if (pdfBytes) {
-      console.log("PDF BYTES EFFETCT", pdfBytes);
       const fileUrl = URL.createObjectURL(pdfBytes);
       const a = document.createElement("a");
       document.body.appendChild(a);
@@ -54,7 +53,6 @@ export const SingleInformation = () => {
 
   useEffect(() => {
     if (xhtmlBytes) {
-      console.log("PDF BYTES EFFETCT", xhtmlBytes);
       const file = new Blob([xhtmlBytes], { type: "application/html" });
       const fileUrl = URL.createObjectURL(file);
       const a = document.createElement("a");
@@ -73,12 +71,7 @@ export const SingleInformation = () => {
       <XmlEditor docSpec={{}} ref={ref} xml={state} mode='laic' />
       <Button onClick={handleExportToXHTML}>Export to XHTML</Button>
       <Button onClick={handleExportToPDF}>Export to PDF</Button>
-      {/* <a href={`http://192.168.8.100:9001/api/obavestenje/generate/html/${id}`}>
-        Export to XHTML
-      </a> */}
-      {/* <a href={`http://192.168.8.100:9001/api/zahtev/generate/pdf/${id}`}>
-        Export to PDF
-      </a> */}
+      <Button>Export to RDF</Button>
     </>
   );
 };

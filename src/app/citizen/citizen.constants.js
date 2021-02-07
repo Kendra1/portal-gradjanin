@@ -8,12 +8,18 @@ export const STORE_MY_INFORMATION = "STORE_MY_INFORMATION";
 
 export const EXPORT_TO_XHTML = "EXPORT_TO_XHTML";
 export const EXPORT_TO_PDF = "EXPORT_TO_PDF";
+export const EXPORT_TO_RDF = "EXPORT_TO_RDF";
+export const EXPORT_TO_JSON = "EXPORT_TO_JSON";
 
 export const STORE_XHTML = "STORE_XHTML";
 export const CLEAR_XHTML = "CLEAR_XHTML";
 
 export const STORE_PDF = "STORE_PDF";
 export const CLEAR_PDF = "CLEAR_PDF";
+
+export const STORE_RDF = "STORE_RDF";
+
+export const STORE_JSON = "STORE_JSON";
 
 export const STORE_REQUEST_PATTERN = "STORE_REQUEST_PATTERN";
 export const GET_REQUEST_PATTERN = "GET_REQUEST_PATTERN";

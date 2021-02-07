@@ -30,16 +30,14 @@ export const denyRequestAPI = (id) => ({
   method: "post",
 });
 
-export const exportInformationToXTHMLAPI = (data) => ({
-  uri: "/exportXHTML",
-  method: "post",
-  data,
+export const exportInformationToXTHMLAPI = (id) => ({
+  uri: `/api/obavestenje/generate/html/${id}`,
+  method: "get",
 });
 
-export const exportInformationPDFAPI = (data) => ({
-  uri: "/exportPDF",
-  method: "post",
-  data,
+export const exportInformationPDFAPI = (id) => ({
+  uri: `/api/obavestenje/generate/pdf/${id}`,
+  method: "get",
 });
 
 export const searchResultsAPI = (param) => ({

@@ -10,6 +10,10 @@ const _selectCurrentXHTML = (state) => state.citizen.currentXHTML;
 
 const _selectCurrentPDF = (state) => state.citizen.currentPDF;
 
+const _selectCurrentRDF = (state) => state.citizen.currentRDF;
+
+const _selectCurrentJSON = (state) => state.citizen.currentJSON;
+
 export const selectRequests = createSelector(
   [_selectRequests],
   (requests) => requests
@@ -33,4 +37,14 @@ export const selectCurrentXHTML = createSelector(
 export const selectCurrentPDF = createSelector(
   [_selectCurrentPDF],
   (currentPDF) => currentPDF
+);
+
+export const selectCurrentRDF = createSelector(
+  [_selectCurrentRDF],
+  (currentRDF) => currentRDF
+);
+
+export const selectCurrentJSON = createSelector(
+  [_selectCurrentJSON],
+  (currentJSON) => currentJSON
 );
